@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_modifications>
+    <!--
+        Inject custom tab navigation links into the XFRM resource tab bar.
+        We target the closing </xf:tab> of the last built-in tab group so that
+        our tabs appear after the standard ones.
+
+        Template: xfrm_resource_view  (the main resource page template)
+        We append a new <xf:tab> block for each active custom tab.
+    -->
+    <template_modification
+        modification_key="SchmitzIT_CustomTabs_resource_tabs"
+        template="xfrm_resource_view"
+        type="callback"
+        enabled="1"
+        description="Inject custom tabs into XFRM resource view"
+        callback_class="SchmitzIT\CustomTabs\Template\Helper\ResourceTabHelper"
+        callback_method="injectTabs"
+    />
+</template_modifications>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<code_event_listeners>
+    <code_event_listener event_id="xfrm_resource_view" callback_class="SchmitzIT\CustomTabs\Listener" callback_method="xfrmResourceView" active="1" hint="" />
+</code_event_listeners>

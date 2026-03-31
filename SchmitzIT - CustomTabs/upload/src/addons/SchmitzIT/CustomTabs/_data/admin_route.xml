@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admin_routes>
+    <route route_prefix="custom-tabs" section_context="custom-tabs">
+        <controller>SchmitzIT\CustomTabs:Admin\Controller\CustomTabController</controller>
+        <context_identifier>tab_id</context_identifier>
+        <match_entity>SchmitzIT\CustomTabs:CustomTab</match_entity>
+    </route>
+</admin_routes>

@@ -1,0 +1,42 @@
+<xf:title>{{ phrase('schmitzit_custom_tabs_manage') }}</xf:title>
+
+<xf:adminpagenav>
+    <a href="{{ link('custom-tabs/add') }}" class="button button--primary">{{ phrase('schmitzit_add_custom_tab') }}</a>
+</xf:adminpagenav>
+
+<xf:if is="$tabs is not empty">
+    <table class="dataList">
+        <thead>
+            <tr>
+                <th>{{ phrase('title') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('display_order') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('active') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('controls') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <xf:foreach loop="$tabs" value="$tab">
+                <tr>
+                    <td>
+                        <a href="{{ link('custom-tabs/edit', $tab) }}">{{ $tab.tab_title }}</a>
+                    </td>
+                    <td>{{ $tab.display_order }}</td>
+                    <td>
+                        <xf:toggle
+                            href="{{ link('custom-tabs/toggle') }}"
+                            name="active[{{ $tab.tab_id }}]"
+                            value="{{ $tab.tab_id }}"
+                            checked="{{ $tab.active }}"
+                        />
+                    </td>
+                    <td>
+                        <a href="{{ link('custom-tabs/edit', $tab) }}" class="button button--link">{{ phrase('edit') }}</a>
+                        <a href="{{ link('custom-tabs/delete', $tab) }}" class="button button--link button--destructive">{{ phrase('delete') }}</a>
+                    </td>
+                </tr>
+            </xf:foreach>
+        </tbody>
+    </table>
+<xf:else />
+    <div class="blockMessage">{{ phrase('schmitzit_no_custom_tabs_configured') }}</div>
+</xf:if>

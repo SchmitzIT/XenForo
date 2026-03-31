@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <template title="schmitzit_custom_tab_list" type="admin" addon_id="SchmitzIT/CustomTabs"><![CDATA[<xf:title>{{ phrase('schmitzit_custom_tabs_manage') }}</xf:title>
+
+<xf:adminpagenav>
+    <a href="{{ link('custom-tabs/add') }}" class="button button--primary">{{ phrase('schmitzit_add_custom_tab') }}</a>
+</xf:adminpagenav>
+
+<xf:if is="$tabs is not empty">
+    <table class="dataList">
+        <thead>
+            <tr>
+                <th>{{ phrase('title') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('display_order') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('active') }}</th>
+                <th class="dataList-col--shrink">{{ phrase('controls') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <xf:foreach loop="$tabs" value="$tab">
+                <tr>
+                    <td>
+                        <a href="{{ link('custom-tabs/edit', $tab) }}">{{ $tab.tab_title }}</a>
+                    </td>
+                    <td>{{ $tab.display_order }}</td>
+                    <td>
+                        <xf:toggle
+                            href="{{ link('custom-tabs/toggle') }}"
+                            name="active[{{ $tab.tab_id }}]"
+                            value="{{ $tab.tab_id }}"
+                            checked="{{ $tab.active }}"
+                        />
+                    </td>
+                    <td>
+                        <a href="{{ link('custom-tabs/edit', $tab) }}" class="button button--link">{{ phrase('edit') }}</a>
+                        <a href="{{ link('custom-tabs/delete', $tab) }}" class="button button--link button--destructive">{{ phrase('delete') }}</a>
+                    </td>
+                </tr>
+            </xf:foreach>
+        </tbody>
+    </table>
+<xf:else />
+    <div class="blockMessage">{{ phrase('schmitzit_no_custom_tabs_configured') }}</div>
+</xf:if>]]></template>
+
+    <template title="schmitzit_custom_tab_edit" type="admin" addon_id="SchmitzIT/CustomTabs"><![CDATA[<xf:title>
+    <xf:if is="$tab.tab_id">
+        {{ phrase('schmitzit_edit_custom_tab_x', {title: $tab.tab_title}) }}
+    <xf:else />
+        {{ phrase('schmitzit_add_custom_tab') }}
+    </xf:if>
+</xf:title>
+
+<form method="post" action="{{ link('custom-tabs/save', $tab) }}" class="block">
+    <div class="block-container">
+        <div class="block-body">
+
+            <xf:row>
+                <xf:label for="tab_title">{{ phrase('schmitzit_tab_title') }}</xf:label>
+                <xf:input
+                    type="text"
+                    name="tab_title"
+                    id="tab_title"
+                    value="{{ $tab.tab_title }}"
+                    class="input--large"
+                    required="required"
+                    maxlength="100"
+                />
+                <xf:hint>{{ phrase('schmitzit_tab_title_hint') }}</xf:hint>
+            </xf:row>
+
+            <xf:row>
+                <xf:label for="display_order">{{ phrase('display_order') }}</xf:label>
+                <xf:input
+                    type="number"
+                    name="display_order"
+                    id="display_order"
+                    value="{{ $tab.display_order ?: 10 }}"
+                    class="input--small"
+                    min="0"
+                />
+            </xf:row>
+
+            <xf:row>
+                <xf:label>{{ phrase('active') }}</xf:label>
+                <xf:checkbox>
+                    <xf:option name="active" value="1" selected="{{ $tab.active }}" label="{{ phrase('active') }}" />
+                </xf:checkbox>
+            </xf:row>
+
+            <xf:row>
+                <xf:label>{{ phrase('schmitzit_allowed_user_groups') }}</xf:label>
+                <xf:checkboxrow name="allowed_group_ids[]">
+                    <xf:foreach loop="$userGroups" value="$group">
+                        <xf:option
+                            value="{{ $group.user_group_id }}"
+                            selected="{{ $tab.allowed_group_ids|contains($group.user_group_id) }}"
+                            label="{{ $group.title }}"
+                        />
+                    </xf:foreach>
+                </xf:checkboxrow>
+                <xf:hint>{{ phrase('schmitzit_allowed_user_groups_hint') }}</xf:hint>
+            </xf:row>
+
+        </div>
+
+        <xf:submitrow sticky="true" icon="save" />
+    </div>
+
+    <xf:token />
+</form>]]></template>
+
+    <template title="schmitzit_custom_tab_content_pane" type="public" addon_id="SchmitzIT/CustomTabs"><![CDATA[<xf:if is="$content AND !$content.isEmpty()">
+    <div class="p-body-pageContent">
+        <div class="bbWrapper">{{ $content.content_html|raw }}</div>
+
+        <xf:if is="$canAddContent">
+            <div class="u-mtL">
+                <a
+                    href="{{ link('resources/custom-tab-content/edit', $resource, {tab_id: $tab.tab_id}) }}"
+                    class="button"
+                    data-xf-click="overlay"
+                >
+                    {{ phrase('schmitzit_edit_tab_content') }}
+                </a>
+                <a
+                    href="{{ link('resources/custom-tab-content/delete', $resource, {tab_id: $tab.tab_id}) }}"
+                    class="button button--muted"
+                    data-xf-click="overlay"
+                >
+                    {{ phrase('schmitzit_delete_tab_content') }}
+                </a>
+            </div>
+        </xf:if>
+    </div>
+
+<xf:elseif is="$canAddContent" />
+    <div class="p-body-pageContent">
+        <div class="blockMessage blockMessage--iconic blockMessage--subtle">
+            {{ phrase('schmitzit_no_content_yet_add_some') }}
+        </div>
+        <div class="u-mtM">
+            <a
+                href="{{ link('resources/custom-tab-content/edit', $resource, {tab_id: $tab.tab_id}) }}"
+                class="button button--primary"
+                data-xf-click="overlay"
+            >
+                {{ phrase('schmitzit_add_content') }}
+            </a>
+        </div>
+    </div>
+</xf:if>]]></template>
+
+    <template title="schmitzit_custom_tab_content_edit" type="public" addon_id="SchmitzIT/CustomTabs"><![CDATA[<xf:title>{{ phrase('schmitzit_edit_content_for_tab_x', {title: $tab.tab_title}) }}</xf:title>
+
+<form
+    method="post"
+    action="{{ link('resources/custom-tab-content/save', $resource, {tab_id: $tab.tab_id}) }}"
+    class="block"
+    data-xf-init="form-submit-row"
+>
+    <div class="block-container">
+
+        <div class="block-body">
+            <xf:row>
+                <xf:editor
+                    name="content"
+                    value="{{ $content.content }}"
+                />
+            </xf:row>
+        </div>
+
+        <xf:submitrow sticky="false" icon="save" />
+    </div>
+
+    <xf:token />
+</form>]]></template>
+</templates>

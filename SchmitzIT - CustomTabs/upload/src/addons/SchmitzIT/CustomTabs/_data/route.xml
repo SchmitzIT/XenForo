@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <route type="public" route_prefix="resources/custom-tab-content">
+        <controller>SchmitzIT\CustomTabs:Pub\Controller\CustomTabContentController</controller>
+        <action_context>tab_id</action_context>
+    </route>
+</routes>

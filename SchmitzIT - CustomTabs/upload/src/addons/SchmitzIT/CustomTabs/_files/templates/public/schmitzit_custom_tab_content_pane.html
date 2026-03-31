@@ -1,0 +1,45 @@
+{{-- Rendered once per custom tab inside the resource view. --}}
+{{-- Variables available: $tab, $resource, $content (may be null), $canAddContent --}}
+
+<xf:if is="$content AND !$content.isEmpty()">
+    <div class="p-body-pageContent">
+        <div class="bbWrapper">{{ $content.content_html|raw }}</div>
+
+        <xf:if is="$canAddContent">
+            <div class="u-mtL">
+                <a
+                    href="{{ link('resources/custom-tab-content/edit', $resource, {tab_id: $tab.tab_id}) }}"
+                    class="button"
+                    data-xf-click="overlay"
+                >
+                    {{ phrase('schmitzit_edit_tab_content') }}
+                </a>
+                <a
+                    href="{{ link('resources/custom-tab-content/delete', $resource, {tab_id: $tab.tab_id}) }}"
+                    class="button button--muted"
+                    data-xf-click="overlay"
+                >
+                    {{ phrase('schmitzit_delete_tab_content') }}
+                </a>
+            </div>
+        </xf:if>
+    </div>
+
+<xf:elseif is="$canAddContent" />
+    {{-- Tab is visible to this user because they can add content --}}
+    <div class="p-body-pageContent">
+        <div class="blockMessage blockMessage--iconic blockMessage--subtle">
+            <xf:fa icon="fas fa-pencil-alt" />
+            {{ phrase('schmitzit_no_content_yet_add_some') }}
+        </div>
+        <div class="u-mtM">
+            <a
+                href="{{ link('resources/custom-tab-content/edit', $resource, {tab_id: $tab.tab_id}) }}"
+                class="button button--primary"
+                data-xf-click="overlay"
+            >
+                {{ phrase('schmitzit_add_content') }}
+            </a>
+        </div>
+    </div>
+</xf:if>

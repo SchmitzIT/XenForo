@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <!-- ACP navigation -->
+    <phrase title="schmitzit_custom_tabs" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Custom Tabs]]>
+    </phrase>
+
+    <!-- ACP pages -->
+    <phrase title="schmitzit_custom_tabs_manage" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Manage Custom Tabs]]>
+    </phrase>
+    <phrase title="schmitzit_add_custom_tab" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Add Custom Tab]]>
+    </phrase>
+    <phrase title="schmitzit_edit_custom_tab_x" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Edit Custom Tab: {title}]]>
+    </phrase>
+    <phrase title="schmitzit_no_custom_tabs_configured" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[No custom tabs have been configured yet. Click 'Add Custom Tab' to create your first one.]]>
+    </phrase>
+
+    <!-- ACP form fields -->
+    <phrase title="schmitzit_tab_title" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Tab Title]]>
+    </phrase>
+    <phrase title="schmitzit_tab_title_hint" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[The label that will appear on the tab when viewing a resource. Maximum 100 characters.]]>
+    </phrase>
+    <phrase title="schmitzit_allowed_user_groups" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Groups Allowed to Add Content]]>
+    </phrase>
+    <phrase title="schmitzit_allowed_user_groups_hint" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Select which user groups may add or edit content on this tab. Administrators and moderators always have access regardless of this setting.]]>
+    </phrase>
+
+    <!-- Public-facing -->
+    <phrase title="schmitzit_edit_content_for_tab_x" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Edit Content: {title}]]>
+    </phrase>
+    <phrase title="schmitzit_add_content" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Add Content]]>
+    </phrase>
+    <phrase title="schmitzit_edit_tab_content" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Edit Content]]>
+    </phrase>
+    <phrase title="schmitzit_delete_tab_content" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[Remove Content]]>
+    </phrase>
+    <phrase title="schmitzit_no_content_yet_add_some" global_cache="0" addon_id="SchmitzIT/CustomTabs">
+        <![CDATA[No content has been added to this tab yet. Click 'Add Content' to get started.]]>
+    </phrase>
+</phrases>

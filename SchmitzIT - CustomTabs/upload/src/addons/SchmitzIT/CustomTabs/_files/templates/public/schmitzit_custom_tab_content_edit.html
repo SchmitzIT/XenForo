@@ -1,0 +1,26 @@
+{{-- Overlay / dedicated page for editing content on a custom tab. --}}
+
+<xf:title>{{ phrase('schmitzit_edit_content_for_tab_x', {title: $tab.tab_title}) }}</xf:title>
+
+<form
+    method="post"
+    action="{{ link('resources/custom-tab-content/save', $resource, {tab_id: $tab.tab_id}) }}"
+    class="block"
+    data-xf-init="form-submit-row"
+>
+    <div class="block-container">
+
+        <div class="block-body">
+            <xf:row>
+                <xf:editor
+                    name="content"
+                    value="{{ $content.content }}"
+                />
+            </xf:row>
+        </div>
+
+        <xf:submitrow sticky="false" icon="save" />
+    </div>
+
+    <xf:token />
+</form>

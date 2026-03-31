@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admin_navigations>
+    <admin_navigation navigation_id="custom-tabs">
+        <parent_navigation_id>applications</parent_navigation_id>
+        <display_order>900</display_order>
+        <link>custom-tabs</link>
+        <icon>fas fa-list-alt</icon>
+        <hide_no_perm>1</hide_no_perm>
+    </admin_navigation>
+</admin_navigations>

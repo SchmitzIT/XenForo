@@ -1,0 +1,17 @@
+{
+    "legacy_addon_id": "",
+    "title": "[SchmitzIT] Custom Tabs",
+    "description": "Adds configurable custom tabs to XenForo Resource Manager resources, with per-tab permission control and a rich-text editor for walkthrough content.",
+    "version_id": 1000010,
+    "version_string": "1.0.0",
+    "dev": "SchmitzIT",
+    "dev_url": "https://gamerscreed.com",
+    "faq_url": "",
+    "support_url": "",
+    "extra_urls": [],
+    "require": {
+        "XF": [2040000, "XenForo 2.4.0+"],
+        "XFRM": [2040000, "XenForo Resource Manager 2.4.0+"]
+    },
+    "icon": "icon.png"
+}

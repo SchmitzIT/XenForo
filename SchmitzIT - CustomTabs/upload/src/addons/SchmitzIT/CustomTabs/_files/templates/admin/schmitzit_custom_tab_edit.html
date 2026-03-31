@@ -1,0 +1,70 @@
+<xf:title>
+    <xf:if is="$tab.tab_id">
+        {{ phrase('schmitzit_edit_custom_tab_x', {title: $tab.tab_title}) }}
+    <xf:else />
+        {{ phrase('schmitzit_add_custom_tab') }}
+    </xf:if>
+</xf:title>
+
+<form method="post" action="{{ link('custom-tabs/save', $tab) }}" class="block">
+    <div class="block-container">
+        <div class="block-body">
+
+            {{-- Tab Title --}}
+            <xf:row>
+                <xf:label for="tab_title">{{ phrase('schmitzit_tab_title') }}</xf:label>
+                <xf:input
+                    type="text"
+                    name="tab_title"
+                    id="tab_title"
+                    value="{{ $tab.tab_title }}"
+                    class="input--large"
+                    required="required"
+                    maxlength="100"
+                />
+                <xf:hint>{{ phrase('schmitzit_tab_title_hint') }}</xf:hint>
+            </xf:row>
+
+            {{-- Display Order --}}
+            <xf:row>
+                <xf:label for="display_order">{{ phrase('display_order') }}</xf:label>
+                <xf:input
+                    type="number"
+                    name="display_order"
+                    id="display_order"
+                    value="{{ $tab.display_order ?: 10 }}"
+                    class="input--small"
+                    min="0"
+                />
+            </xf:row>
+
+            {{-- Active --}}
+            <xf:row>
+                <xf:label>{{ phrase('active') }}</xf:label>
+                <xf:checkbox>
+                    <xf:option name="active" value="1" selected="{{ $tab.active }}" label="{{ phrase('active') }}" />
+                </xf:checkbox>
+            </xf:row>
+
+            {{-- Allowed Groups --}}
+            <xf:row>
+                <xf:label>{{ phrase('schmitzit_allowed_user_groups') }}</xf:label>
+                <xf:checkboxrow name="allowed_group_ids[]">
+                    <xf:foreach loop="$userGroups" value="$group">
+                        <xf:option
+                            value="{{ $group.user_group_id }}"
+                            selected="{{ $tab.allowed_group_ids|contains($group.user_group_id) }}"
+                            label="{{ $group.title }}"
+                        />
+                    </xf:foreach>
+                </xf:checkboxrow>
+                <xf:hint>{{ phrase('schmitzit_allowed_user_groups_hint') }}</xf:hint>
+            </xf:row>
+
+        </div>
+
+        <xf:submitrow sticky="true" icon="save" />
+    </div>
+
+    <xf:token />
+</form>

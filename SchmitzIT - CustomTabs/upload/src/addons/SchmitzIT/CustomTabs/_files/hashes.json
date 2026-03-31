@@ -1,0 +1,31 @@
+{
+    "admin_navigation": {
+        "custom-tabs": {
+            "navigation_id": "custom-tabs",
+            "parent_navigation_id": "applications",
+            "display_order": 900,
+            "link": "custom-tabs",
+            "icon": "fa-list",
+            "phrase": "schmitzit_custom_tabs"
+        }
+    },
+    "admin_route": {
+        "custom-tabs": {
+            "route_prefix": "custom-tabs",
+            "section_context": "custom-tabs",
+            "controller": "SchmitzIT\\CustomTabs:Admin\\Controller\\CustomTabController",
+            "context_identifier": "tab_id",
+            "match_entity": "SchmitzIT\\CustomTabs:CustomTab"
+        }
+    },
+    "route": {
+        "resources/custom-tab-content": {
+            "route_prefix": "resources/custom-tab-content",
+            "format": "index.php?resources/custom-tab-content/",
+            "type": "public",
+            "controller": "SchmitzIT\\CustomTabs:Pub\\Controller\\CustomTabContent",
+            "action_context": "tab_id",
+            "add_on_id": "SchmitzIT/CustomTabs"
+        }
+    }
+}
