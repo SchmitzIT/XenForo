@@ -1,10 +1,10 @@
 {
-    "src/addons/SchmitzIT/CustomTabs/Admin/Controller/CustomTabController.php": "cde2231e45756e8bbab74e7dfc11540a5d9f11888cc3277c0b6beabb46af22e8",
-    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTab.php": "f8662fb0df85b4bc06f7def24c279d7ca0a7c2e31bcb84fc135c752768c59482",
-    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTabContent.php": "ef6489e2f14b2dc3b804d2e15a16d9c3642e8e08842efda9c7aae5d68107cb94",
-    "src/addons/SchmitzIT/CustomTabs/Listener.php": "a99172bfe65567b55ff600290af3c9546ee44ac86d61126cd088c94bdddeff2a",
-    "src/addons/SchmitzIT/CustomTabs/Pub/Controller/CustomTabContentController.php": "91af8b7799a4a1b2ccd9995b2f9e94cd186d9c1ce50a17d960b65338080e5369",
-    "src/addons/SchmitzIT/CustomTabs/Repository/CustomTabRepository.php": "3c59b5c3bb88a199d9e3d56970ee8b78b9d4563f2e4fdc0391817a3fc5e30ff3",
-    "src/addons/SchmitzIT/CustomTabs/Setup.php": "94907a8a390cc68a74e68afc7153db095dbce4e57173c30a357b35a30cc26491",
-    "src/addons/SchmitzIT/CustomTabs/Template/Helper/ResourceTabHelper.php": "bd4cb541234495ae8837c3c95f13bf2875e02c584a069dad191f6c25d4699ed7"
+    "src/addons/SchmitzIT/CustomTabs/Admin/Controller/CustomTabController.php": "1d9cff537abf8ae199bd3f3162293d35f330c53922043310bd8788df970616d6",
+    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTab.php": "bf6447fffc247f02210fe16fa322e0a1f862678fdb0c433b8205b83c688e402d",
+    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTabContent.php": "dd4c540276cfce463c308d64e64fd4794efbf9b7196937abf54f99c780be79d5",
+    "src/addons/SchmitzIT/CustomTabs/Listener.php": "e76850e454713594a5366f57ba8e06d9052c9d3618ab8da5ef114377a76f94af",
+    "src/addons/SchmitzIT/CustomTabs/Pub/Controller/CustomTabContentController.php": "448299f2aa4f42bc9504f6e6b3cf54dc89d208258c9a5e837e92732bccb2d798",
+    "src/addons/SchmitzIT/CustomTabs/Repository/CustomTabRepository.php": "65884771a129f1a8359f7046879d4f183d6de2c912460ae70350f824e6092c49",
+    "src/addons/SchmitzIT/CustomTabs/Setup.php": "ac002e809c66b576075b28e33f92fcd66a1ddc7fc59fea35d1fd23cf4cff6381",
+    "src/addons/SchmitzIT/CustomTabs/Template/Helper/ResourceTabHelper.php": "f109fc5b52b2bba3384f7f7fde9488e13e8a1a4e34e729d206506d1eb2bbb98b"
 }
