@@ -10,8 +10,8 @@
     "support_url": "",
     "extra_urls": [],
     "require": {
-        "XF": [2040000, "XenForo 2.4.0+"],
-        "XFRM": [2040000, "XenForo Resource Manager 2.4.0+"]
+        "XF": [2020000, "XenForo 2.2.0+"],
+        "XFRM": [2020000, "XenForo Resource Manager 2.2.0+"]
     },
     "icon": "icon.png"
 }
