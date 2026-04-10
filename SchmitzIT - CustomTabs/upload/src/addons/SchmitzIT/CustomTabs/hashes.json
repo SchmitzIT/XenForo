@@ -1,10 +1,10 @@
 {
-    "Admin/Controller/CustomTabController.php": "cde2231e45756e8bbab74e7dfc11540a5d9f11888cc3277c0b6beabb46af22e8",
-    "Entity/CustomTab.php": "f8662fb0df85b4bc06f7def24c279d7ca0a7c2e31bcb84fc135c752768c59482",
-    "Entity/CustomTabContent.php": "ef6489e2f14b2dc3b804d2e15a16d9c3642e8e08842efda9c7aae5d68107cb94",
-    "Listener.php": "a99172bfe65567b55ff600290af3c9546ee44ac86d61126cd088c94bdddeff2a",
-    "Pub/Controller/CustomTabContentController.php": "91af8b7799a4a1b2ccd9995b2f9e94cd186d9c1ce50a17d960b65338080e5369",
-    "Repository/CustomTabRepository.php": "3c59b5c3bb88a199d9e3d56970ee8b78b9d4563f2e4fdc0391817a3fc5e30ff3",
-    "Setup.php": "94907a8a390cc68a74e68afc7153db095dbce4e57173c30a357b35a30cc26491",
-    "Template/Helper/ResourceTabHelper.php": "bd4cb541234495ae8837c3c95f13bf2875e02c584a069dad191f6c25d4699ed7"
+    "src/addons/SchmitzIT/CustomTabs/Admin/Controller/CustomTabController.php": "cde2231e45756e8bbab74e7dfc11540a5d9f11888cc3277c0b6beabb46af22e8",
+    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTab.php": "f8662fb0df85b4bc06f7def24c279d7ca0a7c2e31bcb84fc135c752768c59482",
+    "src/addons/SchmitzIT/CustomTabs/Entity/CustomTabContent.php": "ef6489e2f14b2dc3b804d2e15a16d9c3642e8e08842efda9c7aae5d68107cb94",
+    "src/addons/SchmitzIT/CustomTabs/Listener.php": "a99172bfe65567b55ff600290af3c9546ee44ac86d61126cd088c94bdddeff2a",
+    "src/addons/SchmitzIT/CustomTabs/Pub/Controller/CustomTabContentController.php": "91af8b7799a4a1b2ccd9995b2f9e94cd186d9c1ce50a17d960b65338080e5369",
+    "src/addons/SchmitzIT/CustomTabs/Repository/CustomTabRepository.php": "3c59b5c3bb88a199d9e3d56970ee8b78b9d4563f2e4fdc0391817a3fc5e30ff3",
+    "src/addons/SchmitzIT/CustomTabs/Setup.php": "94907a8a390cc68a74e68afc7153db095dbce4e57173c30a357b35a30cc26491",
+    "src/addons/SchmitzIT/CustomTabs/Template/Helper/ResourceTabHelper.php": "bd4cb541234495ae8837c3c95f13bf2875e02c584a069dad191f6c25d4699ed7"
 }
